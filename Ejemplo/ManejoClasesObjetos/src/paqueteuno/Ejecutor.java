@@ -1,22 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paqueteuno;
 
-/**
- *
- * @author reroes
- */
+
 public class Ejecutor {
     public static void main(String[] args) {
         // Crear un objeto de tipo FacturaTelefono
         FacturaTelefono ft = new FacturaTelefono();
+        FacturaTelefono ft2 = new FacturaTelefono();
         // Valores de entrada
         String numeroTelefono = "098321321";
-        double minutos = 230;
-        double valorMinuto = 0.25;
+        double minutos = 100;
+        double valorMinuto = 1.10;
         // uso de los métodos establecer para darle valores a los 
         // atributos del objeto.
         ft.establecerNumeroTelefono(numeroTelefono);
@@ -34,8 +27,22 @@ public class Ejecutor {
         
         // Se hace uso de los métodos obtener para presentar en pantalla lo 
         // requerido
-        System.out.printf("Factura de Teléfono\n\nNúmero de teléfono: %s\n"
-                + "Minutos mensuales: %.2f\nValor por minuto: %.2f\n"
+        System.out.printf("Factura de Teléfono\n\nNúmero de teléfono: %s\n\t"
+                + "Minutos mensuales: %.2f\nValor por minuto: %.2f\n\t"
+                + "Valor a cancelar: %.2f\n", ft.obtenerNumeroTelefono(),
+                ft.obtenerMinutosMes(), ft.obtenerValorMinuto(),
+                ft.obtenerValorFactura());
+        
+        
+        ft2.calcularValorFactura();
+        ft2.establecerNumeroTelefono("0987022435");
+        ft2.establecerMinutosMes(200);
+        ft2.establecerValorMinuto(0.20);
+        
+        // Se hace uso de los métodos obtener para presentar en pantalla lo 
+        // requerido
+        System.out.printf("Factura de Teléfono\n\nNúmero de teléfono: %s\n\t"
+                + "Minutos mensuales: %.2f\nValor por minuto: %.2f\n\t"
                 + "Valor a cancelar: %.2f\n", ft.obtenerNumeroTelefono(),
                 ft.obtenerMinutosMes(), ft.obtenerValorMinuto(),
                 ft.obtenerValorFactura());
